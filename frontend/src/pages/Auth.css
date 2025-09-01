@@ -1,0 +1,373 @@
+/* Authentication Styles */
+.auth-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #699894 0%, #4F7D7A 50%, #3D6462 100%);
+}
+
+.auth-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  width: 100%;
+  max-width: 550px;
+  margin: 20px auto;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h2 {
+  color: #304B4A;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.auth-header p {
+  color: #699894;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.success-icon {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+/* Form Styles */
+.auth-form {
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #304B4A;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #DDEAE8;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4F7D7A;
+  box-shadow: 0 0 0 3px rgba(105, 152, 148, 0.1);
+}
+
+.form-group input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.otp-input {
+  text-align: center;
+  letter-spacing: 8px;
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+/* Button Styles */
+.auth-button {
+  width: 100%;
+  background: linear-gradient(135deg, #699894 0%, #4F7D7A 50%, #3D6462 100%);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.auth-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(105, 152, 148, 0.3);
+}
+
+.auth-button:disabled {
+  background: #BAD5D1;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #4F7D7A;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;
+  margin: 0 5px;
+}
+
+.link-button:hover {
+  color: #3D6462;
+}
+
+.link-button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+/* Message Styles */
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-left: 4px solid #c33;
+  font-size: 14px;
+}
+
+.success-message {
+  background-color: #efe;
+  color: #373;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-left: 4px solid #373;
+  font-size: 14px;
+}
+
+.field-error {
+  color: #c33;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Reset Method Selector */
+.reset-method-selector {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.method-option {
+  width: 100%;
+}
+
+.method-label {
+  display: block;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  background: var(--bg-primary);
+}
+
+.method-label:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.method-label.active {
+  border-color: var(--primary-color);
+  background: linear-gradient(135deg, rgba(105, 152, 148, 0.05) 0%, rgba(79, 125, 122, 0.05) 100%);
+}
+
+.method-label input[type="radio"] {
+  display: none;
+}
+
+.method-content h3 {
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.method-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Password Requirements */
+.password-requirements {
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.requirements-title {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.password-requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.password-requirements li {
+  font-size: 12px;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+}
+
+.password-requirements li.valid {
+  color: #28a745;
+}
+
+.password-requirements li.invalid {
+  color: #dc3545;
+}
+
+.password-requirements li::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.password-requirements li.valid::before {
+  background: #28a745;
+  content: "✓";
+  color: white;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-requirements li.invalid::before {
+  background: #dc3545;
+  content: "✗";
+  color: white;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* OTP Actions */
+.otp-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Auth Links */
+.auth-links {
+  text-align: center;
+  border-top: 1px solid #e1e5e9;
+  padding-top: 20px;
+}
+
+.auth-links p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.auth-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+/* Success Instructions */
+.success-instructions {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.success-instructions p {
+  color: #666;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.auth-actions {
+  margin: 20px 0;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 10px;
+  }
+  
+  .auth-card {
+    padding: 25px;
+    margin: 10px;
+  }
+  
+  .auth-header h2 {
+    font-size: 24px;
+  }
+  
+  .otp-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .method-label {
+    padding: 12px;
+  }
+}
+
+/* Animation for success state */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-card {
+  animation: fadeIn 0.5s ease-out;
+}
