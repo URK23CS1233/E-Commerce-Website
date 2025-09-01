@@ -5,6 +5,7 @@ A comprehensive full-stack e-commerce application built with React.js, Node.js, 
 ## ✨ Features
 
 ### 🔐 Authentication System
+
 - **Email/Password Registration & Login**
 - **OTP-based Authentication**
 - **Forgot Password with Email Reset**
@@ -13,6 +14,7 @@ A comprehensive full-stack e-commerce application built with React.js, Node.js, 
 - **Password Strength Validation**
 
 ### 🛍️ E-Commerce Functionality
+
 - **Product Categories & Best Selling Products**
 - **Shopping Cart with Persistent Storage**
 - **Wishlist Management**
@@ -21,6 +23,7 @@ A comprehensive full-stack e-commerce application built with React.js, Node.js, 
 - **Product Search & Filtering**
 
 ### 🎨 Design & UX
+
 - **Modern Teal Color Theme**
 - **Fully Responsive Design**
 - **Mobile-First Approach**
@@ -28,6 +31,7 @@ A comprehensive full-stack e-commerce application built with React.js, Node.js, 
 - **Local Image Integration System**
 
 ### 🐳 Production Ready
+
 - **Complete Docker Containerization**
 - **Multi-Service Architecture**
 - **Nginx Reverse Proxy**
@@ -37,6 +41,7 @@ A comprehensive full-stack e-commerce application built with React.js, Node.js, 
 ## 🏗️ Tech Stack
 
 ### Frontend
+
 - **React.js** - Component-based UI library
 - **CSS3** - Modern styling with CSS variables
 - **React Router** - Client-side routing
@@ -44,6 +49,7 @@ A comprehensive full-stack e-commerce application built with React.js, Node.js, 
 - **Context API** - State management
 
 ### Backend
+
 - **Node.js** - JavaScript runtime
 - **Express.js** - Web framework
 - **MongoDB** - NoSQL database
@@ -54,6 +60,7 @@ A comprehensive full-stack e-commerce application built with React.js, Node.js, 
 - **express-rate-limit** - Rate limiting
 
 ### DevOps & Deployment
+
 - **Docker & Docker Compose** - Containerization
 - **Nginx** - Reverse proxy and static file serving
 - **MongoDB** - Database with persistent volumes
@@ -239,6 +246,7 @@ E-Commerce-Website/
 1. **Install Docker Desktop** from https://www.docker.com/products/docker-desktop/
 
 2. **Clone and Start**:
+
    ```bash
    git clone <repository-url>
    cd E-Commerce-Website
@@ -253,17 +261,20 @@ E-Commerce-Website/
 ### Option 2: Local Development
 
 1. **Prerequisites**:
+
    - Node.js (v18 or higher)
    - MongoDB (local or cloud)
    - Git
 
 2. **Backend Setup**:
+
    ```bash
    cd backend
    npm install
    ```
 
    Create `.env` file:
+
    ```env
    MONGODB_URI=mongodb://localhost:27017/ecommerce
    JWT_SECRET=your_super_secret_jwt_key
@@ -275,16 +286,18 @@ E-Commerce-Website/
    ```
 
 3. **Frontend Setup**:
+
    ```bash
    cd frontend
    npm install
    ```
 
 4. **Run Applications**:
+
    ```bash
    # Start backend (terminal 1)
    cd backend && npm run dev
-   
+
    # Start frontend (terminal 2)
    cd frontend && npm start
    ```
@@ -294,6 +307,7 @@ E-Commerce-Website/
 ### Environment Variables
 
 #### Backend (.env)
+
 ```env
 # Database
 MONGODB_URI=mongodb://localhost:27017/ecommerce
@@ -317,6 +331,7 @@ RATE_LIMIT_MAX_REQUESTS=100
 ```
 
 #### Frontend (Environment)
+
 ```env
 REACT_APP_API_URL=http://localhost:5000
 ```
@@ -324,6 +339,7 @@ REACT_APP_API_URL=http://localhost:5000
 ## 📚 API Documentation
 
 ### Authentication Endpoints
+
 - `POST /api/auth/register` - User registration
 - `POST /api/auth/login` - Email/password login
 - `POST /api/auth/otp-login` - OTP-based login
@@ -333,27 +349,32 @@ REACT_APP_API_URL=http://localhost:5000
 - `POST /api/auth/logout` - User logout
 
 ### Product Endpoints
+
 - `GET /api/products` - Get all products
 - `GET /api/products/:id` - Get product by ID
 - `GET /api/products/category/:category` - Get products by category
 - `GET /api/products/best-selling` - Get best selling products
 
 ### Category Endpoints
+
 - `GET /api/categories` - Get all categories
 - `GET /api/categories/:id` - Get category by ID
 
 ### Cart Endpoints
+
 - `GET /api/cart` - Get user's cart
 - `POST /api/cart/add` - Add item to cart
 - `PUT /api/cart/update` - Update cart item
 - `DELETE /api/cart/remove/:productId` - Remove item from cart
 
 ### Wishlist Endpoints
+
 - `GET /api/wishlist` - Get user's wishlist
 - `POST /api/wishlist/add` - Add item to wishlist
 - `DELETE /api/wishlist/remove/:productId` - Remove from wishlist
 
 ### Order Endpoints
+
 - `GET /api/orders` - Get user's orders
 - `POST /api/orders` - Create new order
 - `GET /api/orders/:id` - Get order by ID
@@ -361,11 +382,13 @@ REACT_APP_API_URL=http://localhost:5000
 ## 🐳 Docker Deployment
 
 ### Services Architecture
+
 - **MongoDB**: Database with persistent storage
 - **Backend**: Node.js API server
 - **Frontend**: React app served by Nginx
 
 ### Commands
+
 ```bash
 # Start all services
 docker-compose up --build
@@ -426,6 +449,7 @@ The application uses a comprehensive teal color palette:
 ## 🚀 Deployment Options
 
 ### Cloud Platforms
+
 - **AWS**: ECS, EKS, or Elastic Beanstalk
 - **Azure**: Container Instances or AKS
 - **Google Cloud**: Cloud Run or GKE
@@ -433,6 +457,7 @@ The application uses a comprehensive teal color palette:
 - **Railway**: Simple container deployment
 
 ### Traditional Hosting
+
 - **Netlify**: Frontend static hosting
 - **Heroku**: Backend and full-stack deployment
 - **Vercel**: Frontend with API routes
@@ -440,6 +465,7 @@ The application uses a comprehensive teal color palette:
 ## 📊 Performance
 
 ### Optimization Features
+
 - **Code Splitting** in React
 - **Image Optimization** and lazy loading
 - **Nginx Gzip Compression**
@@ -472,6 +498,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🆘 Support
 
 For support and questions:
+
 - Check the [DOCKER-GUIDE.md](DOCKER-GUIDE.md) for deployment help
 - Review the [AUTHENTICATION_GUIDE.md](AUTHENTICATION_GUIDE.md) for auth setup
 - Open an issue for bugs or feature requests
