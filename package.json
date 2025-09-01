@@ -1,21 +1,47 @@
 {
-  "name": "ecommerce-app",
+  "name": "ecommerce-fullstack",
   "version": "1.0.0",
-  "description": "Full-stack e-commerce application",
+  "description": "Full-stack e-commerce application with React frontend and Node.js backend",
+  "main": "backend/server.js",
   "scripts": {
     "install:frontend": "cd frontend && npm install",
     "install:backend": "cd backend && npm install",
+    "install:all": "npm ci && cd backend && npm ci && cd ../frontend && npm ci",
     "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm ci",
     "build": "npm run install:frontend && npm run build:frontend && npm run install:backend",
     "start": "cd backend && npm start",
     "dev:frontend": "cd frontend && npm start",
     "dev:backend": "cd backend && npm run dev",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "test": "cd frontend && npm test && cd ../backend && npm test",
+    "seed": "cd backend && npm run seed",
+    "docker:build": "docker build -t ecommerce-app .",
+    "docker:run": "docker run -p 5000:5000 --env-file .env ecommerce-app",
+    "docker:dev": "docker-compose up --build"
   },
-  "keywords": ["ecommerce", "react", "nodejs", "mongodb"],
-  "author": "",
+  "keywords": [
+    "ecommerce", 
+    "react", 
+    "nodejs", 
+    "express", 
+    "mongodb", 
+    "jwt", 
+    "authentication",
+    "docker",
+    "fullstack"
+  ],
+  "author": "URK23CS1233",
   "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/URK23CS1233/E-Commerce-Website.git"
   }
 }

@@ -1,27 +1,46 @@
 services:
-  # Backend API Service
+  # Single Full-Stack Service
   - type: web
-    name: ecommerce-backend
-    env: node
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && npm start
+    name: ecommerce-fullstack
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    region: oregon
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         sync: false
-    # Add your environment variables here:
-    # - key: MONGODB_URI
-    #   sync: false
-    # - key: JWT_SECRET
-    #   sync: false
-    
-  # Frontend Static Site
-  - type: static
-    name: ecommerce-frontend
-    env: node
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: ./frontend/build
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_REFRESH_SECRET
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_SERVICE
+        value: gmail
+    healthCheckPath: /api/health
+
+  # MongoDB Database
+  - type: pserv
+    name: ecommerce-mongodb
+    env: docker
+    plan: starter
+    dockerfilePath: ./mongo.Dockerfile
+    dockerContext: .
+    disk:
+      name: mongodb-data
+      mountPath: /data/db
+      sizeGB: 10
     envVars:
-      - key: NODE_VERSION
-        value: 18
+      - key: MONGO_INITDB_ROOT_USERNAME
+        value: admin
+      - key: MONGO_INITDB_ROOT_PASSWORD
+        sync: false
+      - key: MONGO_INITDB_DATABASE
+        value: ecommerce

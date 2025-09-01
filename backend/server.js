@@ -34,12 +34,24 @@ app.use('/api/cart', require('./routes/cart'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/wishlist', require('./routes/wishlist'));
 
+// Health check endpoint for Docker
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'OK', 
+    timestamp: new Date().toISOString(),
+    service: 'E-Commerce API',
+    version: '1.0.0'
+  });
+});
+
 // Serve static files from React app in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/build')));
+  // Serve static files from the public directory (where frontend build will be copied)
+  app.use(express.static(path.join(__dirname, 'public')));
   
+  // Handle React routing, return all requests to React app
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
   });
 } else {
   app.get('/', (req, res) => {
